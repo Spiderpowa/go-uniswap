@@ -11,7 +11,8 @@
     "postinstall": "go get github.com/ethereum/go-ethereum/cmd/abigen",
     "precompile": "cd vendor/uniswap && yarn",
     "compile": "cd vendor/uniswap && yarn compile",
-    "abigen": "jq '.abi' vendor/uniswap/build/UniswapV2Router02.json > build/UniswapV2Router02.abi; abigen --abi build/UniswapV2Router02.abi --type Router02 --pkg uniswap --out router02.go"
+    "abigen:router": "jq '.abi' vendor/uniswap/build/UniswapV2Router02.json > build/UniswapV2Router02.abi; abigen --abi build/UniswapV2Router02.abi --type Router02 --pkg uniswap --out router02.go",
+    "abigen:erc20": "jq '.abi' vendor/uniswap/build/ERC20.json > build/ERC20.abi; abigen --abi build/ERC20.abi --type ERC20 --pkg uniswap --out erc20.go"
   },
   "author": "Jimmy Hu",
   "license": "MIT",
